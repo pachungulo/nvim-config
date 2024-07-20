@@ -7,21 +7,19 @@ return {
   end,
   config = function()
     local wk = require("which-key")
-    wk.register({
-      -- ["<leader>f"] = { name = "+file" },
-      -- ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find File" },
-      -- ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-      -- ["<leader>fn"] = { "<cmd>enew<cr>", "New File" },
-      -- ["<leader>gf"] = { "LSP-Format" },
-      -- ["<leader>gd"] = { "LSP-Definition" },
-      -- ["<leader>gr"] = { "LSP-References" },
-      -- ["<leader>ca"] = { "LSP-Code Action" },
-      ["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
-      ["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
-      ["<leader>i"] = { name = "[I]nfo", _ = "which_key_ignore" },
-      ["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
-      ["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
-      -- ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
+    wk.add({
+    { "<leader>c", group = "[C]ode" },
+    -- { "<leader>c_", hidden = true },
+    { "<leader>d", group = "[D]ocument" },
+    -- { "<leader>d_", hidden = true },
+    { "<leader>i", group = "[I]nfo" },
+    -- { "<leader>i_", hidden = true },
+    { "<leader>r", group = "[R]ename" },
+    -- { "<leader>r_", hidden = true },
+    { "<leader>s", group = "[S]earch" },
+    -- { "<leader>s_", hidden = true },
+    { "<leader>p", group = "[P]review" },
+    { "<leader>t", group = "[T]oggle" },
     })
   end,
 }
