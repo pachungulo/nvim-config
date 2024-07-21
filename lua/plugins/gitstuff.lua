@@ -10,5 +10,6 @@ return {
   },
   {
     "tpope/vim-fugitive",
+      vim.keymap.set("n", "<leader>g", ":Git ", { desc = "[G]it" })
   },
 }
