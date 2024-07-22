@@ -10,6 +10,8 @@ return {
   },
   {
     "tpope/vim-fugitive",
-    vim.keymap.set("n", "<leader>g", ":Git ", { desc = "[G]it" })
+    vim.keymap.set("n", "<leader>gs", ":Git<CR>", { desc = "[G]it [S]tatus" }),
+    vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { desc = "[G]it [B]lame" }),
+    vim.keymap.set("n", "<leader>gg", ":Git ", { desc = "[G]it _______" }),
   },
 }
