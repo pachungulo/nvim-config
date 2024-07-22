@@ -23,3 +23,7 @@ vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
+
+--kickstart part 2
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
