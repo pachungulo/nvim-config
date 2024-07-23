@@ -3,6 +3,12 @@ return {
     "hrsh7th/cmp-nvim-lsp",
   },
   {
+    "hrsh7th/cmp-path",
+  },
+  {
+    "hrsh7th/cmp-buffer",
+  },
+  {
     "L3MON4D3/LuaSnip",
     dependencies = {
       "saadparwaiz1/cmp_luasnip",
@@ -47,22 +53,10 @@ return {
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" },
-        }, {
           { name = "buffer" },
+          { name = "path" },
         }),
       })
-
-      -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
-      -- Set configuration for specific filetype.
-      --[[ cmp.setup.filetype('gitcommit', {
-        sources = cmp.config.sources({
-          { name = 'git' },
-        }, {
-          { name = 'buffer' },
-        })
-     })
-     require("cmp_git").setup() ]]
-      --
     end,
   },
 }
