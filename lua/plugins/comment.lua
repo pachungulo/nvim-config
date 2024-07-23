@@ -5,7 +5,7 @@ return {
     require("Comment").setup({
       mappings = {
         ---Extra mapping; `gco`, `gcO`, `gcA`
-        extra = false,
+        extra = true,
       },
     })
   end,
