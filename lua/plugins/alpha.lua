@@ -25,6 +25,7 @@ return {
       [[                                                                       ]],
       [[                                                                       ]],
     }
+    dashboard.section.header.opts.hl = "AlphaHeader"
 
     alpha.setup(dashboard.opts)
   end,
