@@ -6,7 +6,7 @@ return {
     config.setup({
       ensure_installed = { "lua", "python" },
       highlight = { enable = true },
-      indent = { enable = true },
+      indent = { enable = false },
       auto_install = true,
     })
   end,
