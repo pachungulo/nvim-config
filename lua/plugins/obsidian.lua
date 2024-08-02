@@ -11,10 +11,10 @@ return {
   --   "BufNewFile path/to/my-vault/**.md",
   -- },
   dependencies = {
-    -- Required.
     "nvim-lua/plenary.nvim",
-
-    -- see below for full list of optional dependencies 👇
+    "hrsh7th/nvim-cmp",
+    "nvim-telescope/telescope.nvim",
+    "nvim-treesitter/nvim-treesitter",
   },
   opts = {
     workspaces = {
@@ -22,10 +22,10 @@ return {
         name = "personal",
         path = "~/vaults/personal",
       },
-      {
-        name = "work",
-        path = "~/vaults/work",
-      },
+      -- {
+      --   name = "work",
+      --   path = "~/vaults/work",
+      -- },
     },
 
     -- see below for full list of options 👇
