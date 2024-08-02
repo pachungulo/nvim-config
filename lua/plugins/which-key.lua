@@ -20,6 +20,7 @@ return {
       { "<leader>p", group = "[P]review" },
       { "<leader>t", group = "[T]oggle" },
       { "<leader>g", group = "[G]it" },
+      { "<leader>w", proxy = "<c-w>", group = "[W]indows" },
     })
   end,
 }
