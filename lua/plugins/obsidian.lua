@@ -16,18 +16,21 @@ return {
     "nvim-telescope/telescope.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
-  opts = {
-    workspaces = {
-      {
-        name = "personal",
-        path = "~/vaults/personal",
+  config = function()
+    require("obsidian").setup({
+      workspaces = {
+        {
+          name = "personal",
+          path = "~/vaults/personal",
+        },
+        -- {
+        --   name = "work",
+        --   path = "~/vaults/work",
+        -- },
       },
-      -- {
-      --   name = "work",
-      --   path = "~/vaults/work",
-      -- },
-    },
 
-    -- see below for full list of options 👇
-  },
+      -- see below for full list of options 👇
+    })
+    vim.opt.conceallevel = 2
+  end
 }
