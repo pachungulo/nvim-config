@@ -28,6 +28,7 @@ return {
         --   path = "~/vaults/work",
         -- },
       },
+      disable_frontmatter = true,
 
       -- see below for full list of options 👇
     })
