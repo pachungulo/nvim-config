@@ -29,8 +29,10 @@ return {
         -- },
       },
       disable_frontmatter = true,
+      daily_notes = {
+        folder = "dailies"
+      }
 
-      -- see below for full list of options 👇
     })
     vim.opt.conceallevel = 2
   end
