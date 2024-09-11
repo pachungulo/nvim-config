@@ -9,10 +9,16 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = { "lua_ls" },
       })
+
+      -- Capabilities are for nvim-cmp
+      local capabilities = vim.tbl_deep_extend(
+        "force",
+        {},
+        vim.lsp.protocol.make_client_capabilities(),
+        require("cmp_nvim_lsp").default_capabilities())
+
       require("mason-lspconfig").setup_handlers({
         function(server_name)
-          local capabilities = vim.lsp.protocol.make_client_capabilities()
-          capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
           require("lspconfig")[server_name].setup({
             capabilities = capabilities,
           })
@@ -25,7 +31,8 @@ return {
                   globals = { "vim" },
                 },
               },
-            }
+            },
+            capabilities = capabilities,
           }
         end
       })
