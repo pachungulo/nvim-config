@@ -7,6 +7,6 @@ return {
             show_start = false,
             show_end = false,
             highlight = "diffLine",
-        }
+        },
     },
 }
