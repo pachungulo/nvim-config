@@ -19,4 +19,9 @@ return {
             graph_style = "kitty",
         },
     },
+    {
+        "FabijanZulj/blame.nvim",
+        lazy = false,
+        opts = {},
+    },
 }
