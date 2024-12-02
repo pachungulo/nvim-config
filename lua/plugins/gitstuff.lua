@@ -4,6 +4,7 @@ return {
         config = function()
             require("gitsigns").setup()
             vim.keymap.set("n", "<leader>ph", ":Gitsigns preview_hunk<CR>", { desc = "[P]review [H]unk" })
+            vim.keymap.set("n", "<leader>gb", ":Gitsigns blame<CR>", { desc = "[G]it [B]lame" })
             vim.keymap.set("n", "[c", ":Gitsigns prev_hunk<CR>", { desc = "Previous Hunk" })
             vim.keymap.set("n", "]c", ":Gitsigns next_hunk<CR>", { desc = "Next Hunk" })
         end,
@@ -18,10 +19,5 @@ return {
         opts = {
             graph_style = "kitty",
         },
-    },
-    {
-        "FabijanZulj/blame.nvim",
-        lazy = false,
-        opts = {},
     },
 }
