@@ -20,3 +20,6 @@ vim.keymap.set("n", "<leader>il", "<cmd>LspInfo<CR>", { desc = "[L]SP Status" })
 -- Git keymaps
 vim.keymap.set("n", "<leader>gs", "<cmd>Neogit<CR>", { desc = "[G]it [S]tatus" })
 vim.keymap.set("n", "<leader>gb", "<cmd>BlameToggle<CR>", { desc = "[G]it [B]lame" })
+
+-- Misc
+vim.keymap.set("n", "Q", "@q")
