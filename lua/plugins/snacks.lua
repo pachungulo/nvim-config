@@ -25,7 +25,8 @@ return {
         { "<leader><space>", function() Snacks.picker.buffers() end, desc = "Buffers" },
         { "<leader>sg", function() Snacks.picker.grep() end, desc = "[G]rep" },
         { "<leader>s:", function() Snacks.picker.command_history() end, desc = "Cmd(:) History" },
-        { "<C-p>", function() Snacks.picker.files() end, desc = "Find Files" },
+        { "<leader>sf", function() Snacks.picker.files() end, desc = "[F]iles" },
+        { "<C-p>", function() Snacks.picker.smart() end, desc = "Smart open" },
         -- find
         { "<leader>s.", function() Snacks.picker.recent() end, desc = "Recent(.)" },
         -- git
