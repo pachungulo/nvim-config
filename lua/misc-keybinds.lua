@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>ic", "<cmd>CmpStatus<CR>", { desc = "[C]ompletions 
 vim.keymap.set("n", "<leader>il", "<cmd>LspInfo<CR>", { desc = "[L]SP Status" })
 
 -- Git keymaps
-vim.keymap.set("n", "<leader>gs", "<cmd>Neogit<CR>", { desc = "[G]it [S]tatus" })
+vim.keymap.set("n", "<leader>gs", "<cmd>Git<CR>", { desc = "[G]it [S]tatus" })
 vim.keymap.set("n", "<leader>gb", "<cmd>BlameToggle<CR>", { desc = "[G]it [B]lame" })
 vim.keymap.set("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", { desc = "[G]it [D]iff" })
 

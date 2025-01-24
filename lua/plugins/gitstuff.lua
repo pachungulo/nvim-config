@@ -12,15 +12,30 @@ return {
             vim.keymap.set("n", "]c", ":Gitsigns next_hunk<CR>", { desc = "Next Hunk" })
         end,
     },
+    -- {
+    --     "NeogitOrg/neogit",
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim", -- required
+    --         "sindrets/diffview.nvim", -- optional - Diff integration
+    --         -- "nvim-telescope/telescope.nvim", -- optional
+    --     },
+    --     opts = {
+    --         graph_style = "kitty",
+    --     },
+    -- },
     {
-        "NeogitOrg/neogit",
+        "tpope/vim-fugitive",
+    },
+    {
+        "sindrets/diffview.nvim",
+        opts = {},
+    },
+    {
+        "rbong/vim-flog",
+        lazy = true,
+        cmd = { "Flog", "Flogsplit", "Floggit" },
         dependencies = {
-            "nvim-lua/plenary.nvim", -- required
-            "sindrets/diffview.nvim", -- optional - Diff integration
-            -- "nvim-telescope/telescope.nvim", -- optional
-        },
-        opts = {
-            graph_style = "kitty",
+            "tpope/vim-fugitive",
         },
     },
 }
