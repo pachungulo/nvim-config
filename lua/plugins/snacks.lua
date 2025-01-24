@@ -7,14 +7,33 @@ return {
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
         bigfile = { enabled = true },
-        -- dashboard = { enabled = true }, -- TODO:
+        picker = {},
         notifier = { enabled = true },
         indent = {
             animate = {
                 enabled = false,
             },
         },
-        picker = {},
+        dashboard = {
+            enabled = true,
+            -- preset = { "doom" },
+            sections = {
+                { section = "header" },
+                { section = "keys", gap = 1, padding = 1 },
+                { section = "startup" },
+            },
+            preset = {
+                header = [[
+██╗   ██╗███████╗ ██████╗ ██████╗ ██████╗ ███████╗██████╗ 
+██║   ██║██╔════╝██╔════╝██╔═══██╗██╔══██╗██╔════╝╚════██╗
+██║   ██║███████╗██║     ██║   ██║██║  ██║█████╗    ▄███╔╝
+╚██╗ ██╔╝╚════██║██║     ██║   ██║██║  ██║██╔══╝    ▀▀══╝ 
+ ╚████╔╝ ███████║╚██████╗╚██████╔╝██████╔╝███████╗  ██╗   
+  ╚═══╝  ╚══════╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝  ╚═╝   
+
+                ]],
+            }
+        },
     },
 
     keys = {
