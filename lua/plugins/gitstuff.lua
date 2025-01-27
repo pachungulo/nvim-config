@@ -1,16 +1,45 @@
 return {
     {
         "lewis6991/gitsigns.nvim",
-        config = function()
-            require("gitsigns").setup()
-            vim.keymap.set("n", "<leader>hp", ":Gitsigns preview_hunk<CR>", { desc = "[H]unk [P]review" })
-            vim.keymap.set("n", "<leader>hr", ":Gitsigns reset_hunk<CR>", { desc = "[H]unk [R]eset" })
-            vim.keymap.set("n", "<leader>hs", ":Gitsigns stage_hunk<CR>", { desc = "[H]unk [S]tage" })
-            vim.keymap.set("n", "<leader>hu", ":Gitsigns undo_stage_hunk<CR>", { desc = "[H]unk [U]nstage" })
-            vim.keymap.set("n", "<leader>gb", ":Gitsigns blame<CR>", { desc = "[G]it [B]lame" })
-            vim.keymap.set("n", "[c", ":Gitsigns prev_hunk<CR>", { desc = "Previous Hunk" })
-            vim.keymap.set("n", "]c", ":Gitsigns next_hunk<CR>", { desc = "Next Hunk" })
-        end,
+        opts = {
+            on_attach = function(buffer)
+                local gs = package.loaded.gitsigns
+
+                local function map(mode, l, r, desc)
+                    vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
+                end
+
+                map("n", "]h", function()
+                    if vim.wo.diff then
+                        vim.cmd.normal({ "]c", bang = true })
+                    else
+                        gs.nav_hunk("next")
+                    end
+                end, "Next Hunk")
+                map("n", "[h", function()
+                    if vim.wo.diff then
+                        vim.cmd.normal({ "[c", bang = true })
+                    else
+                        gs.nav_hunk("prev")
+                    end
+                end, "Prev Hunk")
+                -- stylua: ignore start
+                map("n", "]H", function() gs.nav_hunk("last") end, "Last Hunk")
+                map("n", "[H", function() gs.nav_hunk("first") end, "First Hunk")
+                map({ "n", "v" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "[S]tage Hunk")
+                map({ "n", "v" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "[R]eset Hunk")
+                map("n", "<leader>ghS", gs.stage_buffer, "[S]tage Buffer")
+                map("n", "<leader>ghu", gs.undo_stage_hunk, "[U]ndo Stage Hunk")
+                map("n", "<leader>ghR", gs.reset_buffer, "[R]eset Buffer")
+                map("n", "<leader>ghp", gs.preview_hunk_inline, "[P]review Hunk Inline")
+                map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "[B]lame Line")
+                map("n", "<leader>ghB", function() gs.blame() end, "[B]lame Buffer")
+                map("n", "<leader>ghd", gs.diffthis, "[D]iff This")
+                map("n", "<leader>ghD", function() gs.diffthis("~") end, "[D]iff This ~")
+                map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk") -- WTF is this
+                -- stylua: ignore end
+            end,
+        },
     },
     -- {
     --     "NeogitOrg/neogit",
@@ -29,6 +58,7 @@ return {
     {
         "sindrets/diffview.nvim",
         opts = {},
+        cmd = { "DiffviewOpen", "DiffviewFileHistory" },
     },
     {
         "rbong/vim-flog",

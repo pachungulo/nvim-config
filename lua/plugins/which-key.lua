@@ -17,9 +17,9 @@ return {
             -- { "<leader>r_", hidden = true },
             { "<leader>s", group = "[S]earch" },
             -- { "<leader>s_", hidden = true },
-            { "<leader>h", group = "[H]unk" },
             { "<leader>t", group = "[T]oggle" },
             { "<leader>g", group = "[G]it" },
+            { "<leader>gh", group = "[G]it [H]unk" },
             { "<leader>w", proxy = "<c-w>", group = "[W]indows" },
         })
     end,
