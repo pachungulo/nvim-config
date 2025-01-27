@@ -67,5 +67,8 @@ return {
         dependencies = {
             "tpope/vim-fugitive",
         },
+        init = function ()
+            vim.g.flog_enable_extended_chars = true
+        end
     },
 }
