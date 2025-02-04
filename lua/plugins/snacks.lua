@@ -51,6 +51,7 @@ return {
         -- git
         -- { "<leader>gc", function() Snacks.picker.git_log() end, desc = "Git Log" },
         -- { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
+        { "<leader>lg", function() Snacks.lazygit() end, desc = "[L]azy [G]it" },
         -- Grep
         -- { "<leader>sb", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
         -- { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
