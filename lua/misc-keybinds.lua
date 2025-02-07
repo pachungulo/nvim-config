@@ -21,8 +21,15 @@ vim.keymap.set("n", "<leader>il", "<cmd>LspInfo<CR>", { desc = "[L]SP Status" })
 vim.keymap.set("n", "<leader>gg", ":Git ", { desc = "[G]it command" })
 vim.keymap.set("n", "<leader>gs", "<cmd>tab Git<CR>", { desc = "[G]it [S]tatus" })
 vim.keymap.set("n", "<leader>gb", "<cmd>Git blame<CR>", { desc = "[G]it [B]lame" })
-vim.keymap.set("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", { desc = "[G]it [D]iff" })
 vim.keymap.set("n", "<leader>gl", "<cmd>Flog<CR>", { desc = "[G]it [L]og" })
+
+vim.keymap.set("n", "<leader>gd", function()
+    if next(require("diffview.lib").views) == nil then
+        vim.cmd("DiffviewOpen")
+    else
+        vim.cmd("DiffviewClose")
+    end
+end, { desc = "[G]it [D]iff" })
 
 -- Misc
 vim.keymap.set("n", "Q", "@q")
