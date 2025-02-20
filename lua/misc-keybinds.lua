@@ -33,3 +33,4 @@ end, { desc = "[G]it [D]iff" })
 
 -- Misc
 vim.keymap.set("n", "Q", "@q")
+vim.keymap.set("n", "Y", "\"+y")
