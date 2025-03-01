@@ -33,4 +33,6 @@ end, { desc = "[G]it [D]iff" })
 
 -- Misc
 vim.keymap.set("n", "Q", "@q")
-vim.keymap.set("n", "Y", "\"+y")
+vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Clipboard [Y]ank"})
+vim.keymap.set({ "n", "v" }, "<leader>p", "\"+p", { desc = "Clipboard [p]aste"})
+vim.keymap.set({ "n", "v" }, "<leader>P", "\"+P", { desc = "Clipboard [P]aste"})
