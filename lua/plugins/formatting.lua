@@ -14,6 +14,7 @@ return {
     opts = {
         formatters_by_ft = {
             lua = { "stylua" },
+            vhdl = { "vsg" },
             -- Conform can also run multiple formatters sequentially
             -- python = { "isort", "black" },
             --
